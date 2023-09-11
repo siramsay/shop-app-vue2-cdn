@@ -1,0 +1,166 @@
+:root {
+
+  /*
+    https://medium.com/@adrjohnston/native-css-mixins-ee2a50e07b54
+    color: #f5f5f5;*/
+}
+
+/* reset */
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/*
+@media query orirentation : potrait or landscape;
+ */
+
+html:not([lang]),
+html[lang=""] {
+  border-top: 20px solid red;
+}
+
+html:not([lang]),html[lang=""] { border-top: 20px solid red; }
+img:not([alt]),img[alt=""] { border: 5px dashed red; }
+canvas:not([role]),canvas:not([aria-label]),canvas[role=""],canvas[aria-label=""] { border: 5px dashed red; }
+
+
+/*
+html
+moz-osx-font-smoothing: auto;
+
+body
+font-variant-ligatures: normal;
+font-kerning: normal;
+*/
+
+
+body {
+  margin: 0;
+  background-color: #4BC2A5;
+}
+
+main {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* All from codepen */
+
+body {
+  font-family: serif;
+}
+
+#app {
+  background: #E8F5E9;
+  color: #111111;
+  letter-spacing: 0.04em;
+  text-align: center;
+  width: 370px;
+  height: 100vh;
+  margin: 0 auto;
+  display: table;
+  padding: 10px;
+  line-height: 1.4em;
+  border-radius: 23px 13px 33px;
+  /* box-sizing:border-box; this didn't work*/
+}
+h1{
+  margin: 1em 0;
+}
+.title {
+  color: #222222;
+}
+
+.main-info {
+  text-align: left;
+}
+
+.main-info:after {
+   content: "";
+   display: table;
+   clear: both;
+}
+
+hr {
+  border-top: 0;
+  border-bottom: 1px solid #555;
+}
+
+ul {
+  background-color: #fff;;
+}
+
+li {
+  /* list-style: none outside none; */
+  text-align: left;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+li.newClass {
+  color: pink;
+}
+
+input,
+textarea {
+  font-family: serif;
+  width: 330px;
+  margin: 15px 0;
+  padding: 8px 10px;
+  outline: 0;
+  font-size: 1em;
+}
+
+textarea::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f044";
+
+}
+
+.wrapper-button {
+  float: right;
+  margin: 0 10px;
+}
+
+li.highlight, .completed {
+  background: gainsboro;
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="submit"],
+input[type="email"],
+input[type="password"],
+input:focus {
+  font-size: 16px !important
+}
+
+select {
+  border: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance:none;
+}
+
+
+#prev {
+  list-style: none;
+  background: transparent;
+  display: inline-flex;
+}
+#prev li {
+  padding: 0.5em;
+  border: 1px solid;
+  background-color: #7BAFC2;
+  border-radius: 0.5em;
+}
+
+

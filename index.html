@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- TODO: is there a best order for this -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <title>My New Project</title>
+  <script src="https://kit.fontawesome.com/0a071592ba.js" crossorigin="anonymous"></script>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="white-translucent">
+  <!--
+  https://stackoverflow.com/questions/19729700/how-to-set-the-status-bar-color-in-an-ios-7-web-app
+  #A5D896 -->
+
+  <!-- https://medium.com/@sam20gh/how-to-add-add-to-home-screen-to-your-website-4b07aee02676 -->
+  <meta name=”msapplication-TileColor” content=”#ffffff">
+  <meta name=”theme-color” content=”#ffffff”>
+
+</head>
+
+<body>
+
+<header>
+</header>
+
+<main>
+
+  <!-- Todo: add a class to a v-for li element https://forum.vuejs.org/t/add-class-on-clicked-list-element-remove-class-from-not-clicked-elements/21771 -->
+
+  <div id="app">
+    <div class="main-info">
+      <span class="title"><h3>Shop App</h3></span>
+    </div>
+    <hr>
+
+    <input
+            v-model="inputItem"
+            v-on:keyup.enter="addItem"
+            placeholder="&#xF044"
+            style="font-family:Arial, FontAwesome; font-size: 1em"
+    >
+
+  <!-- Previous Product Search -->
+    <div v-if="inputItem">
+      <!--<button @click="filterPre()">Filter</button>-->
+
+      <ul id="prev" v-for="(item, index) in filterPre">
+        <li v-on:click="addItemL(item)">{{ item }}</li>
+      </ul>
+
+    </div>
+
+    <div v-for ="(item, index) in newItem">
+      {{ item.name }} {{ item.num }}
+      <!-- <input v-model="item.num" > -->
+      <select v-model.number="item.num">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+
+      <span class="wrapper-button">
+        <button v-on:click="item.num = item.num-1"> - </button>
+        <button v-on:click="item.num = item.num+1"> + </button>
+        <button v-on:click="addToShopList(index, item.name, item.num)">Add</button>
+      </span>
+    </div>
+
+    <h1>Shopping List</h1>
+
+    <button @click="sortA()">A - Z</button>
+    <button @click="sortLowest()">Sort Lowest</button>
+    <button @click="sortHighest()">Sort Highest</button>
+    <ul>
+
+      <li v-for="(item, index) in shopList">
+
+        <span v-if ="!item.edit">
+                {{ item.product }} ( {{ item.quantity }} )  <button v-on:click="$set(item, 'edit', !item.edit)">Edit</button>
+        </span>
+
+        <div  v-if="item.edit">
+        {{ item.product }} <input v-model="item.quantity" style="display: inline; width: 6em; border: 0 solid; padding: 0">
+          <button v-on:click="item.quantity = item.quantity-1"> - </button>
+          <button v-on:click="item.quantity = item.quantity+1"> + </button>
+          <button v-on:click="item.edit = false">Save</button>
+        </div>
+
+
+      </li>
+    </ul>
+
+
+
+  </div>
+
+</main>
+
+</body>
+<script src="app.js"></script>
+<!-- https://stackoverflow.com/questions/436411/where-should-i-put-script-tags-in-html-markup -->
+</html>
+
+
+

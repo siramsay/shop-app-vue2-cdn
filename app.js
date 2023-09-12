@@ -71,14 +71,15 @@ new Vue({
                     console.log(newStr);
                     //alert(name);
 
+                    console.log('Q', this.shopList);
+                    this.shopList[0].quantity = this.shopList[0].quantity + num;
+
                     // Check if already on list and if it is add it to the current list item else add new item
 
                     this.shopList.push({index: name, product: newStr, quantity: num}) //add the new task an object: property
+
                     // check is already in the shopping and offer to merge
                     this.newItem.splice(index, 1);
-
-                    // should check if the item is already in the array, shouldn't be if they selected it from the preemptive
-
                     this.previousProduct.includes(newStr) ? console.log('Already in the list') : this.previousProduct.push(newStr);
                     // if includes then push a mark to say it has been add before, removed, bought.
 
@@ -89,9 +90,17 @@ new Vue({
                     newStr = name.replace(/\b\w/g, l => l.toUpperCase());
                     console.log(newStr);
                     //alert(name);
-                    this.shopList.push({index: name, product: newStr, quantity: num}) //add the new task an object: property
-                    // check is already in the shopping and offer to merge
-                    this.newItem.splice(index, 1);
+
+                    console.log('Q', this.shopList);
+                    if (this.shopList[0].index === newStr) {
+                        this.shopList[0].quantity = this.shopList[0].quantity + num;
+                        this.newItem.splice(index, 1); //   use to remove from add to list
+                    } else {
+                        this.shopList.push({index: name, product: newStr, quantity: num}) //add the new task an object: property
+                        // check is already in the shopping and offer to merge
+                        this.newItem.splice(index, 1); //   use to remove from add to list
+                    }
+
 
                     // should check if the item is already in the array, shouldn't be if they selected it from the preemptive
 

@@ -57,10 +57,11 @@
       {{ item.name }} {{ item.num }}
       <!-- <input v-model="item.num" > -->
       <select v-model.number="item.num">
-        <option>1</option>
-        <option>2</option>
+
+        <option v-for ="item in selectNum">{{item}}</option>
+       <!-- <option>2</option>
         <option>3</option>
-        <option>4</option>
+        <option>4</option>-->
       </select>
 
       <span class="wrapper-button">
@@ -93,7 +94,7 @@
 
       </li>
     </ul>
-
+    <!-- {{ selectNum }} -->
 
 
   </div>

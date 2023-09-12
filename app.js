@@ -16,6 +16,7 @@ new Vue({
             return {
                 inputItem: '',
                 newItem: [],
+                selectNum: [],
                 //newItem: '',
                 shopList: [
                   {index: 'Fish', product: 'Fish', quantity: 20 },
@@ -32,7 +33,10 @@ new Vue({
                 filterText: ''
             }
     },
-    methods: {
+    methods: cd{
+        makeSequence() {
+            this.selectNum = [...Array(100).keys()]
+        },
         addItem() {
             if (this.inputItem.length > 0) {
                 //this.newItem2 = this.newItem;
@@ -184,6 +188,10 @@ new Vue({
             return this.previousProduct.filter(el => el.match(filter));
 
         }
+    },
+    created() {
+        this.makeSequence();
+        console.log();
     }
 });
 

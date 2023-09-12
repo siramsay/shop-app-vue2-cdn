@@ -33,7 +33,7 @@ new Vue({
                 filterText: ''
             }
     },
-    methods: cd{
+    methods: {
         makeSequence() {
             this.selectNum = [...Array(100).keys()]
         },

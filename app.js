@@ -69,7 +69,7 @@ new Vue({
                 // https://stackoverflow.com/questions/3884632/how-to-get-the-last-character-of-a-string
                 const stringLength = name.length;
                 // console.log('lastChar: ', name.charAt(stringLength - 1));
-                lastChar = name.charAt(stringLength - 1);
+                const lastChar = name.charAt(stringLength - 1);
 
                 // Check for white space
                 var inValid = /\s/;

@@ -17,7 +17,7 @@ new Vue({
                 inputItem: '',
                 newItem: [],
                 selectNum: [],
-                //newItem: '',
+                shopListArray: [],
                 shopList: [
                   {index: 'Fish', product: 'Fish', quantity: 20 },
                   {index: 'Burgers', product: 'Burgers', quantity: 4 },
@@ -52,6 +52,14 @@ new Vue({
                 this.newItem.push({index: item, name: item, num: 1});
                 this.inputItem = '';
         },
+        createShopListArray() {
+            //this.shopListArray = function () {
+            this.shopListArray = [];
+            for(let i = 0; i < this.shopList.length; i++) {
+              this.shopListArray.push(this.shopList[i].index);
+            }
+           // };
+        },
         addToShopList(index, name, num) {
             if (num > 0) {
                 console.log(name);
@@ -66,7 +74,14 @@ new Vue({
                 // Check for white space
                 var inValid = /\s/;
                 var k = inValid.test(lastChar);
-                alert(k); //returns true false
+                alert('has whitespace:' + k); //returns true false
+
+                this.createShopListArray();
+                console.log('Z:',this.shopListArray);
+
+
+                // Burger or Burgers
+                // Make Add button focus after enter
 
                 if (k) {
                   name = name.slice(0, -1); // trims last character
@@ -76,14 +91,38 @@ new Vue({
                     //alert(name);
 
                     console.log('Q', this.shopList);
-                    this.shopList[0].quantity = this.shopList[0].quantity + num;
+
+                    const newStrIndex = this.shopListArray.indexOf(newStr);
+                    console.log('NSI:', newStrIndex);
+
+
+                    if (newStrIndex === -1) {
+                        this.shopList.push({index: name, product: newStr, quantity: num}) //add the new task an object: property
+                        // check is already in the shopping and offer to merge
+                        this.newItem.splice(index, 1);
+                    } else {
+                        this.shopList[newStrIndex].quantity = this.shopList[newStrIndex].quantity + num;
+                        this.newItem.splice(index, 1); //   use to remove from add to list
+                    }
+
+                    /*if (this.shopList[newStrIndex].index === newStr) {
+                        this.shopList[newStrIndex].quantity = this.shopList[newStrIndex].quantity + num;
+                        this.newItem.splice(index, 1); //   use to remove from add to list
+                    } else {
+                        this.shopList.push({index: name, product: newStr, quantity: num}) //add the new task an object: property
+                        // check is already in the shopping and offer to merge
+                        this.newItem.splice(index, 1); //   use to remove from add to list
+                    }*/
+
+
+                    //this.shopList[0].quantity = this.shopList[0].quantity + num;
 
                     // Check if already on list and if it is add it to the current list item else add new item
 
-                    this.shopList.push({index: name, product: newStr, quantity: num}) //add the new task an object: property
+                    //this.shopList.push({index: name, product: newStr, quantity: num}) //add the new task an object: property
 
                     // check is already in the shopping and offer to merge
-                    this.newItem.splice(index, 1);
+                    //this.newItem.splice(index, 1);
                     this.previousProduct.includes(newStr) ? console.log('Already in the list') : this.previousProduct.push(newStr);
                     // if includes then push a mark to say it has been add before, removed, bought.
 
@@ -95,15 +134,27 @@ new Vue({
                     console.log(newStr);
                     //alert(name);
 
+                    const newStrIndex = this.shopListArray.indexOf(newStr);
+                    console.log('NSI:', newStrIndex);
+
                     console.log('Q', this.shopList);
-                    if (this.shopList[0].index === newStr) {
-                        this.shopList[0].quantity = this.shopList[0].quantity + num;
+                    if (newStrIndex === -1) {
+                        this.shopList.push({index: name, product: newStr, quantity: num}) //add the new task an object: property
+                        // check is already in the shopping and offer to merge
+                        this.newItem.splice(index, 1);
+                    } else {
+                        this.shopList[newStrIndex].quantity = this.shopList[newStrIndex].quantity + num;
+                        this.newItem.splice(index, 1); //   use to remove from add to list
+                    }
+
+                    /*if (this.shopList[newStrIndex].index === newStr) {
+                        this.shopList[newStrIndex].quantity = this.shopList[newStrIndex].quantity + num;
                         this.newItem.splice(index, 1); //   use to remove from add to list
                     } else {
                         this.shopList.push({index: name, product: newStr, quantity: num}) //add the new task an object: property
                         // check is already in the shopping and offer to merge
                         this.newItem.splice(index, 1); //   use to remove from add to list
-                    }
+                    }*/
 
 
                     // should check if the item is already in the array, shouldn't be if they selected it from the preemptive

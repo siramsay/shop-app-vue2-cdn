@@ -36,11 +36,10 @@ new Vue({
         alert("You need to add some text")
       }
     },
-    /*addItemL(item) {
-            //this.newItem2 = this.newItem;
-            this.newItem.push({index: item, name: item, num: 1});
-            this.inputItem = '';
-    },*/
+    addPreviousItem(item) {
+      this.newItem.push({index: item, itemName: item, num: 1});
+      this.inputItem = '';
+    },
     createShopListArray() {
       this.shopListArray = [];
       for (let i = 0; i < this.shopList.length; i++) {
@@ -65,43 +64,24 @@ new Vue({
 
         if (k) {
           itemName = itemName.slice(0, -1); // trims last character
-          const newStr = itemName.replace(/\b\w/g, l => l.toUpperCase());
-
-          const newStrIndex = this.shopListArray.indexOf(newStr);
-
-          if (newStrIndex === -1) {
-            this.shopList.push({index: itemName, product: newStr, quantity: num}) //add the new task an object: property
-            // check is already in the shopping and offer to merge
-            this.newItem.splice(index, 1);
-          } else {
-            this.shopList[newStrIndex].quantity = this.shopList[newStrIndex].quantity + num;
-            this.newItem.splice(index, 1); //use to remove from add to list
-          }
-
-          // check is already in the shopping and offer to merge
-          this.previousProduct.includes(newStr) ? console.log('Already in the list') : this.previousProduct.push(newStr);
-          // if includes then push a mark to say it has been add before, removed, bought.
-
-        } else {
-          const newStr = itemName.replace(/\b\w/g, l => l.toUpperCase());
-          console.log(newStr);
-
-          const newStrIndex = this.shopListArray.indexOf(newStr);
-
-          console.log('Q', this.shopList);
-          if (newStrIndex === -1) {
-            this.shopList.push({index: itemName, product: newStr, quantity: num}) //add the new task an object: property
-            // check is already in the shopping and offer to merge
-            this.newItem.splice(index, 1);
-          } else {
-            this.shopList[newStrIndex].quantity = this.shopList[newStrIndex].quantity + num;
-            this.newItem.splice(index, 1); //   use to remove from add to list
-          }
-
-          this.previousProduct.includes(newStr) ? console.log('Already in the list') : this.previousProduct.push(newStr);
-          // if includes then push a mark to say it has been add before, removed, bought.
-
         }
+
+        const newStr = itemName.replace(/\b\w/g, l => l.toUpperCase());
+
+        const newStrIndex = this.shopListArray.indexOf(newStr);
+
+        if (newStrIndex === -1) {
+          this.shopList.push({index: itemName, product: newStr, quantity: num}) //add the new task an object: property
+          // check is already in the shopping and offer to merge
+          this.newItem.splice(index, 1);
+        } else {
+          this.shopList[newStrIndex].quantity = this.shopList[newStrIndex].quantity + num;
+          this.newItem.splice(index, 1); //use to remove from add to list
+        }
+
+        // check is already in the shopping and offer to merge
+        this.previousProduct.includes(newStr) ? console.log('Already in the list') : this.previousProduct.push(newStr);
+        // if includes then push a mark to say it has been add before, removed, bought.
 
       } else {
         alert("You need to add more than 0")

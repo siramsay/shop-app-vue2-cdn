@@ -48,7 +48,7 @@
       <!--<button @click="filterPre()">Filter</button>-->
 
       <ul id="prev" v-for="(item, index) in filterPre">
-        <li v-on:click="addItemL(item)">{{ item }}</li>
+        <li v-on:click="addPreviousItem(item)">{{ item }}</li>
       </ul>
 
     </div>

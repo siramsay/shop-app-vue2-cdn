@@ -53,21 +53,18 @@
 
     </div>
 
+  <!-- Add Item(S) -->
     <div v-for ="(item, index) in newItem">
-      {{ item.name }} {{ item.num }}
-      <!-- <input v-model="item.num" > -->
-      <select v-model.number="item.num">
+      {{ item.itemName }} {{ item.num }}
 
-        <option v-for ="item in selectNum">{{item}}</option>
-       <!-- <option>2</option>
-        <option>3</option>
-        <option>4</option>-->
+      <select v-model.number="item.num">
+        <option v-for ="selectNum in selectNums">{{ selectNum }}</option>
       </select>
 
       <span class="wrapper-button">
         <button v-on:click="item.num = item.num-1"> - </button>
         <button v-on:click="item.num = item.num+1"> + </button>
-        <button v-on:click="addToShopList(index, item.name, item.num)">Add</button>
+        <button v-on:click="addToShopList(index, item.itemName, item.num)">Add</button>
       </span>
     </div>
 
@@ -94,9 +91,6 @@
 
       </li>
     </ul>
-    <!-- {{ selectNum }} -->
-
-
   </div>
 
 </main>

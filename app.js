@@ -54,6 +54,7 @@ new Vue({
         const stringLength = itemName.length;
         const lastChar = itemName.charAt(stringLength - 1);
         const inValid = /\s/;
+        // str.replace(/\s+/g, '');  // removes all white space
         const k = inValid.test(lastChar);
 
         // Burger or Burgers
@@ -63,7 +64,9 @@ new Vue({
           itemName = itemName.slice(0, -1); // trims last character
         }
 
-        const newStr = itemName.replace(/\b\w/g, l => l.toUpperCase());
+        const trimNewStr = itemName.trim();
+
+        const newStr = trimNewStr.replace(/\b\w/g, l => l.toUpperCase());
         console.log('NS:', newStr);
 
 

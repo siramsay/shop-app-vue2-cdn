@@ -49,15 +49,12 @@ new Vue({
     addToShopList(index, itemName, num) {
       if (num > 0) {
         console.log(itemName);
-        const stringLength = itemName.length;
-        const lastChar = itemName.charAt(stringLength - 1);
 
         // Check for white space
+        const stringLength = itemName.length;
+        const lastChar = itemName.charAt(stringLength - 1);
         const inValid = /\s/;
         const k = inValid.test(lastChar);
-
-        // This could be moved and created again if a new item is added instead of each time.
-        this.createShopListArray();
 
         // Burger or Burgers
         // Make Add button focus after enter
@@ -67,11 +64,16 @@ new Vue({
         }
 
         const newStr = itemName.replace(/\b\w/g, l => l.toUpperCase());
+        console.log('NS:', newStr);
 
+
+        // This could be moved and created again if a new item is added instead of each time.
+        this.createShopListArray();
+        console.log('SL: ',this.shopListArray)
         const newStrIndex = this.shopListArray.indexOf(newStr);
 
         if (newStrIndex === -1) {
-          this.shopList.push({index: itemName, product: newStr, quantity: num}) //add the new task an object: property
+          this.shopList.push({index: newStr, product: newStr, quantity: num}) //add the new task an object: property
           // check is already in the shopping and offer to merge
           this.newItem.splice(index, 1);
         } else {

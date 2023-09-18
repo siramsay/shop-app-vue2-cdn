@@ -43,18 +43,31 @@
             style="font-family:Arial, FontAwesome; font-size: 1em"
     >
 
-  <!-- Previous Product Search -->
-    <div v-if="inputItem">
-      <!--<button @click="filterPre()">Filter</button>-->
+    <!-- Previous Product Suggestion -->
+    <div v-if="previousProduct">
+      <div v-if="inputItem">
+        <!-- Previous Product Search -->
+        <!--<button @click="filterPre()">Filter</button>-->
+        <ul id="prev" v-for="(item, index) in filterPre">
+          <li v-on:click="addPreviousItem(item)">{{ item }}</li>
+        </ul>
+      </div>
 
-      <ul id="prev" v-for="(item, index) in filterPre">
+      <!--
+      <div v-else>
+      <ul id="suggestion" v-for="(item, index) in previousProduct">
         <li v-on:click="addPreviousItem(item)">{{ item }}</li>
       </ul>
+      </div>
+      -->
 
     </div>
 
+
   <!-- Add Item(S) -->
-    <div v-for ="(item, index) in newItem">
+
+    <div v-if="newItem">
+    <div  v-for ="(item, index) in newItem">
       {{ item.itemName }} {{ item.num }}
 
       <select v-model.number="item.num">
@@ -66,6 +79,12 @@
         <button v-on:click="item.num = item.num+1"> + </button>
         <button v-on:click="addToShopList(index, item.itemName, item.num)">Add</button>
       </span>
+    </div>
+    </div>
+    <div v-if="newItem.length === 0">
+      <ul id="suggestion" v-for="(item, index) in previousProduct">
+        <li v-on:click="addPreviousItem(item)">{{ item }}</li>
+      </ul>
     </div>
 
     <h1>Shopping List</h1>

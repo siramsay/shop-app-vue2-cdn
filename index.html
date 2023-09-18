@@ -43,18 +43,31 @@
             style="font-family:Arial, FontAwesome; font-size: 1em"
     >
 
-  <!-- Previous Product Search -->
-    <div v-if="inputItem">
-      <!--<button @click="filterPre()">Filter</button>-->
+    <!-- Previous Product Suggestion -->
+    <div v-if="previousProduct">
+      <div v-if="inputItem">
+        <!-- Previous Product Search -->
+        <!--<button @click="filterPre()">Filter</button>-->
+        <ul id="prev" v-for="(item, index) in filterPre">
+          <li v-on:click="addPreviousItem(item)">{{ item }}</li>
+        </ul>
+      </div>
 
-      <ul id="prev" v-for="(item, index) in filterPre">
+      <!--
+      <div v-else>
+      <ul id="suggestion" v-for="(item, index) in previousProduct">
         <li v-on:click="addPreviousItem(item)">{{ item }}</li>
       </ul>
+      </div>
+      -->
 
     </div>
 
+
   <!-- Add Item(S) -->
-    <div v-for ="(item, index) in newItem">
+
+
+    <div  v-for ="(item, index) in newItem">
       {{ item.itemName }} {{ item.num }}
 
       <select v-model.number="item.num">

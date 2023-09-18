@@ -151,16 +151,35 @@ select {
 }
 
 
-#prev {
+#prev,
+#suggestion{
   list-style: none;
   background: transparent;
   display: inline-flex;
 }
-#prev li {
+
+.sugeestion-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin: 0;
+}
+#suggestion{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 110px;
+  overflow-x: scroll;
+  padding-left: 0;
+
+}
+li#prev,
+#suggestion li {
   padding: 0.5em;
   border: 1px solid;
   background-color: #7BAFC2;
   border-radius: 0.5em;
+  margin: .2rem .5rem;
+  flex-basis: fit-content;
 }
 
 

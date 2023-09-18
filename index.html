@@ -48,8 +48,11 @@
       <div v-if="inputItem">
         <!-- Previous Product Search -->
         <!--<button @click="filterPre()">Filter</button>-->
-        <ul id="prev" v-for="(item, index) in filterPre">
-          <li v-on:click="addPreviousItem(item)">{{ item }}</li>
+        <ul>
+          <li id="prev"
+              v-for="(item, index) in filterPre"
+              v-on:click="addPreviousItem(item)">{{ item }}
+          </li>
         </ul>
       </div>
 
@@ -81,9 +84,10 @@
       </span>
     </div>
     </div>
-    <div v-if="newItem.length === 0">
-      <ul id="suggestion" v-for="(item, index) in previousProduct">
-        <li v-on:click="addPreviousItem(item)">{{ item }}</li>
+
+    <div class="suggestion-wrapper" v-if="newItem.length === 0 && !inputItem">
+      <ul id="suggestion" >
+        <li v-for="(item, index) in previousProduct" v-on:click="addPreviousItem(item)">{{ item }}</li>
       </ul>
     </div>
 

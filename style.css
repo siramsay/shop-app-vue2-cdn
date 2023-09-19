@@ -158,18 +158,26 @@ select {
   display: inline-flex;
 }
 
-.sugeestion-wrapper {
-  overflow-x: auto;
+.suggestion-outer-wrapper {
+  overflow-x: hidden;
   overflow-y: hidden;
   margin: 0;
+  width: 370px;
+}
+
+.suggestion-wrapper {
+  overflow-x: scroll;
+  height: 110px;
 }
 #suggestion{
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  /*flex-direction: column; */
   height: 110px;
-  overflow-x: scroll;
+  /*overflow: scroll; */
   padding-left: 0;
+  width: 600px; /* 400px works with first 8 in array of previous */
+  align-items: flex-start;
 
 }
 li#prev,
@@ -180,6 +188,7 @@ li#prev,
   border-radius: 0.5em;
   margin: .2rem .5rem;
   flex-basis: fit-content;
+
 }
 
 

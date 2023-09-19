@@ -67,28 +67,29 @@
     </div>
 
 
-  <!-- Add Item(S) -->
+    <!-- Add Item(S) -->
 
     <div v-if="newItem">
-    <div  v-for ="(item, index) in newItem">
-      {{ item.itemName }} {{ item.num }}
+      <div v-for="(item, index) in newItem">
+        {{ item.itemName }} {{ item.num }}
 
-      <select v-model.number="item.num">
-        <option v-for ="selectNum in selectNums">{{ selectNum }}</option>
-      </select>
+        <select v-model.number="item.num">
+          <option v-for="selectNum in selectNums">{{ selectNum }}</option>
+        </select>
 
-      <span class="wrapper-button">
+        <span class="wrapper-button">
         <button v-on:click="item.num = item.num-1"> - </button>
         <button v-on:click="item.num = item.num+1"> + </button>
         <button v-on:click="addToShopList(index, item.itemName, item.num)">Add</button>
       </span>
+      </div>
     </div>
-    </div>
-
-    <div class="suggestion-wrapper" v-if="newItem.length === 0 && !inputItem">
-      <ul id="suggestion" >
-        <li v-for="(item, index) in previousProduct" v-on:click="addPreviousItem(item)">{{ item }}</li>
-      </ul>
+    <div class="suggestion-outer-wrapper">
+      <div class="suggestion-wrapper" v-if="newItem.length === 0 && !inputItem">
+        <ul id="suggestion">
+          <li v-for="(item, index) in previousProduct" v-on:click="addPreviousItem(item)">{{ item }}</li>
+        </ul>
+      </div>
     </div>
 
     <h1>Shopping List</h1>
@@ -100,14 +101,14 @@
 
       <li v-for="(item, index) in shopList">
 
-        <span v-if ="!item.edit">
+        <span v-if="!item.edit">
                 {{ item.product }} ( {{ item.quantity }} )  <button v-on:click="$set(item, 'edit', !item.edit)">Edit</button>
         </span>
 
-        <div  v-if="item.edit">
-        {{ item.product }} <input v-model="item.quantity" style="display: inline; width: 6em; border: 0 solid; padding: 0">
-          <button v-on:click="item.quantity = item.quantity-1"> - </button>
-          <button v-on:click="item.quantity = item.quantity+1"> + </button>
+        <div v-if="item.edit">
+          {{ item.product }} <input v-model="item.quantity" style="display: inline; width: 6em; border: 0 solid; padding: 0">
+          <button v-on:click="item.quantity = item.quantity-1"> -</button>
+          <button v-on:click="item.quantity = item.quantity+1"> +</button>
           <button v-on:click="item.edit = false">Save</button>
         </div>
 

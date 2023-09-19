@@ -15,7 +15,7 @@ new Vue({
         {index: 'Pancake Mix', product: 'Pancake Mix', quantity: 1}
       ],
       //selected: undefined,
-      previousProduct: ['Fish', 'Burgers', 'Potatoes', 'Apples', 'Pancake Mix', 'Chicken', 'Chilli', 'Chocolate'],
+      previousProduct: ['Fish', 'Burgers', 'Potatoes', 'Apples', 'Pancake Mix', 'Chicken', 'Chilli', 'Chocolate','Beer','Lemon Juice','Pork'],
       preFilter: [],
       edit: false,
       //

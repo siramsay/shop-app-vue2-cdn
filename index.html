@@ -41,6 +41,7 @@
     <input
       v-model="inputItem"
       v-on:keyup.enter="addItem"
+      v-on:click="clearPlaceholder"
       placeholder="&#xF044"
       style="font-family:Arial, FontAwesome; font-size: 1em"
     >
@@ -87,9 +88,9 @@
       </div>
     </div>
 
-    <div class="suggestion-outer-wrapper">
-      <div class="suggestion-wrapper" v-if="newItem.length === 0 && !inputItem">
-        <h4>Suggested Regularly Bought</h4> <br>
+    <div class="suggestion-outer-wrapper" v-if="newItem.length === 0 && !inputItem">
+      <h4>Suggested Regularly Bought</h4> <br>
+      <div class="suggestion-wrapper">
         <ul id="suggestion">
           <li v-for="(item, index) in previousProduct" v-on:click="addPreviousItem(item)">{{ item }}</li>
         </ul>

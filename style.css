@@ -103,6 +103,8 @@ li.newClass {
 input,
 textarea {
   font-family: serif;
+  /*width: calc(100% - 30px);
+  width: 330px;*/
   width: 100%;
   margin: 15px 0;
   padding: 8px 10px;
@@ -137,7 +139,13 @@ input[type="submit"],
 input[type="email"],
 input[type="password"],
 input:focus {
-  font-size: 16px !important
+  font-size: 1em !important
+}
+input::placeholder {
+  font-size: 2em
+}
+input.add-item::placeholder {
+ color: transparent;
 }
 
 select {
@@ -159,12 +167,12 @@ select {
   overflow-x: hidden;
   overflow-y: hidden;
   margin: 0;
-  width: 370px;
+  width: 350px;
 }
 
 .suggestion-wrapper {
   overflow-x: scroll;
-  height: 175px;
+  height: 125px;
 }
 #suggestion{
   display: flex;

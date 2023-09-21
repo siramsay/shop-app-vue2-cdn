@@ -15,6 +15,7 @@ new Vue({
         {index: 'Pancake Mix', product: 'Pancake Mix', quantity: 1}
       ],
       //selected: undefined,
+      placeHolder: '',
       previousProduct: ['Fish', 'Burgers', 'Potatoes', 'Apples', 'Pancake Mix', 'Chicken', 'Chilli', 'Chocolate','Beer','Lemon Juice','Pork'],
       preFilter: [],
       edit: false,
@@ -26,12 +27,17 @@ new Vue({
     makeSequence() {
       this.selectNums = [...Array(101).keys()]  //  todo: slice/pop 0 off the front
     },
+    clearPlaceholder () {
+      //if (this.inputItem.length === 0) {
+        //document.querySelector("input").removeAttribute('placeholder');
+      document.querySelector("input").classList.add('add-item');
+      //}
+    },
     addItem() {
       if (this.inputItem.length > 0) {
         //this.newItem2 = this.newItem;
         this.newItem.push({index: this.inputItem, itemName: this.inputItem, num: 1});
         this.inputItem = '';
-
       } else {
         alert("You need to add some text")
       }
@@ -87,7 +93,9 @@ new Vue({
         // check is already in the shopping and offer to merge
         this.previousProduct.includes(newStr) ? console.log('Already in the list') : this.previousProduct.push(newStr);
         // if includes then push a mark to say it has been add before, removed, bought.
-
+        //document.querySelector("input.add-item").setAttribute('placeholder', "&#xF044");
+        //document.querySelector("input").style.fontSize = '2em';
+        document.querySelector("input").classList.remove('add-item');
       } else {
         alert("You need to add more than 0")
       }

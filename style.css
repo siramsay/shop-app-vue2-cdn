@@ -107,7 +107,7 @@ textarea {
   width: 330px;*/
   width: 100%;
   margin: 15px 0;
-  padding: 8px 10px;
+  padding: 10px 10px 8px;
   outline: 0;
   font-size: 1em;
   border-radius: 1.5rem;
@@ -119,6 +119,13 @@ textarea::before {
   font-weight: 900;
   content: "\f044";
 
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+}
+:-moz-placeholder {
+  text-align: center;
 }
 
 .wrapper-button {
@@ -140,12 +147,18 @@ input[type="email"],
 input[type="password"],
 input:focus {
   font-size: 1em !important
+
 }
 input::placeholder {
-  font-size: 2em
+  font-size: 2.2em;
+  vertical-align: middle;
+
 }
-input.add-item::placeholder {
+/*/input.add-item::placeholder {
  color: transparent;
+}*/
+input:focus::placeholder {
+  color: transparent;
 }
 
 select {

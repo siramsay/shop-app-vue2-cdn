@@ -99,6 +99,11 @@
       </div>
     </div>
 
+    <h3>Urgent</h3>
+    <ul>
+      <li v-if="item.isUrgent" v-for="(item, index) in shopList">{{ item.product }} </li>
+    </ul>
+
     <br>
     <h3>Shopping List</h3>
     <br>

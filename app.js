@@ -10,7 +10,7 @@ new Vue({
       shopList: [
         {index: 'Fish', product: 'Fish', quantity: 20},
         {index: 'Burgers', product: 'Burgers', quantity: 4},
-        {index: 'Potatoes', product: 'Potatoes', quantity: 10},
+        {index: 'Potatoes', product: 'Potatoes', quantity: 10, isUrgent: true},
         {index: 'Apples', product: 'Apples', quantity: 12},
         {index: 'Pancake Mix', product: 'Pancake Mix', quantity: 1}
       ],

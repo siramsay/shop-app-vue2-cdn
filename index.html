@@ -86,6 +86,7 @@
         <button v-on:click="item.num = item.num-1"> - </button>
         <button v-on:click="item.num = item.num+1"> + </button>
         <button v-on:click="addToShopList(index, item.itemName, item.num)">Add</button>
+        <button v-on:click="addToShopList(index, item.itemName, item.num, urgent = true)">Urgent</button>
       </span>
       </div>
     </div>

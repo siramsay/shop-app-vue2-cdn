@@ -88,6 +88,7 @@ new Vue({
           this.newItem.splice(index, 1);
         } else {
           this.shopList[newStrIndex].quantity = this.shopList[newStrIndex].quantity + num;
+          this.shopList[newStrIndex].isUrgent = urgent;
           this.newItem.splice(index, 1); //use to remove from add to list
         }
 

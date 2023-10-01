@@ -54,11 +54,10 @@ main {
   color: #111111;
   letter-spacing: 0.04em;
   /*text-align: center;*/
-  width: 370px;
-  height: 100vh;
+  width: 375px;
+  height: 812px;
   margin: 0 auto;
   display: table;
-  padding: 10px;
   line-height: 1.4em;
   border-radius: 23px 13px 33px;
   /* box-sizing:border-box; this didn't work*/
@@ -180,9 +179,8 @@ select {
   overflow-x: hidden;
   overflow-y: hidden;
   margin: 0;
-  width: 350px;
+  width: 100vw;;
 }
-
 .suggestion-wrapper {
   overflow-x: scroll;
   height: 125px;

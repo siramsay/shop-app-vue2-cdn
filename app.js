@@ -10,7 +10,7 @@ new Vue({
       shopList: [
         {index: 'Fish', product: 'Fish', quantity: 20},
         {index: 'Burgers', product: 'Burgers', quantity: 4},
-        {index: 'Potatoes', product: 'Potatoes', quantity: 10},
+        {index: 'Potatoes', product: 'Potatoes', quantity: 10, isUrgent: true},
         {index: 'Apples', product: 'Apples', quantity: 12},
         {index: 'Pancake Mix', product: 'Pancake Mix', quantity: 1}
       ],
@@ -39,7 +39,7 @@ new Vue({
         this.newItem.push({index: this.inputItem, itemName: this.inputItem, num: 1});
         this.inputItem = '';
       } else {
-        alert("You need to add some text")
+        alert("You need to add an item")
       }
     },
     addPreviousItem(item) {
@@ -52,7 +52,7 @@ new Vue({
         this.shopListArray.push(this.shopList[i].index);
       }
     },
-    addToShopList(index, itemName, num) {
+    addToShopList(index, itemName, num, urgent) {
       if (num > 0) {
         console.log(itemName);
 
@@ -82,11 +82,13 @@ new Vue({
         const newStrIndex = this.shopListArray.indexOf(newStr);
 
         if (newStrIndex === -1) {
-          this.shopList.push({index: newStr, product: newStr, quantity: num}) //add the new task an object: property
+          this.shopList.push({index: newStr, product: newStr, quantity: num, isUrgent: urgent}) //add the new task an object: property
           // check is already in the shopping and offer to merge
+          console.log('test urgent',this.shopList);
           this.newItem.splice(index, 1);
         } else {
           this.shopList[newStrIndex].quantity = this.shopList[newStrIndex].quantity + num;
+          this.shopList[newStrIndex].isUrgent = urgent;
           this.newItem.splice(index, 1); //use to remove from add to list
         }
 

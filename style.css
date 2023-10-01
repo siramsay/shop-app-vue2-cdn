@@ -167,6 +167,10 @@ select {
   appearance:none;
 }
 
+/*Layout*/
+section {
+  padding: 10px;
+}
 
 #prev,
 #suggestion{

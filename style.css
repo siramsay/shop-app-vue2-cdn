@@ -62,6 +62,9 @@ main {
   border-radius: 23px 13px 33px;
   /* box-sizing:border-box; this didn't work*/
 }
+#app > * {
+  max-width: 567px;
+}
 h1{
   margin: 1em 0;
 }
@@ -185,18 +188,29 @@ section {
   margin: 0;
   width: 100vw;;
 }
+.suggestion-outer-wrapper > * {
+  padding-left: 10px;
+}
 .suggestion-wrapper {
   overflow-x: scroll;
   height: 125px;
 }
-#suggestion{
+.previous-wrapper {
+  overflow-x: scroll;
+  height: 75px;
+}
+#suggestion,
+#previous {
   display: flex;
   flex-wrap: wrap;
   height: 110px;
   padding-left: 0;
   width: 800px; /* 400px works with first 8 in array of previous */
   align-items: flex-start;
-
+}
+#previous {
+  height: 60px;
+  background-color: transparent;
 }
 li#prev,
 #suggestion li {

@@ -53,10 +53,10 @@
     <!-- Previous Product Suggestion -->
     <div class="suggestion-outer-wrapper">
     <div v-if="previousProduct">
-      <div v-if="inputItem">
+      <div v-if="inputItem" class="previous-wrapper">
         <!-- Previous Product Search -->
         <!--<button @click="filterPre()">Filter</button>-->
-        <ul>
+        <ul id="previous">
           <li id="prev"
               v-for="(item, index) in filterPre"
               v-on:click="addPreviousItem(item)">{{ item }}
@@ -64,6 +64,9 @@
         </ul>
       </div>
       </div>
+    </div>
+
+
 
       <!--
       <div v-else>
@@ -73,12 +76,12 @@
       </div>
       -->
 
-    </div>
+
 
 
     <!-- Add Item(S) -->
 
-    <div v-if="newItem">
+    <section v-if="newItem">
       <div v-for="(item, index) in newItem">
         {{ item.itemName }} {{ item.num }}
 
@@ -93,7 +96,7 @@
         <button v-on:click="addToShopList(index, item.itemName, item.num, item.urgent = true)">Urgent</button>
       </span>
       </div>
-    </div>
+    </section>
 
     <div class="suggestion-outer-wrapper" v-if="newItem.length === 0 && !inputItem">
       <h4>Suggested Regularly Bought</h4> <br>

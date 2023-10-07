@@ -20,9 +20,17 @@ html[lang=""] {
   border-top: 20px solid red;
 }
 
-html:not([lang]),html[lang=""] { border-top: 20px solid red; }
-img:not([alt]),img[alt=""] { border: 5px dashed red; }
-canvas:not([role]),canvas:not([aria-label]),canvas[role=""],canvas[aria-label=""] { border: 5px dashed red; }
+html:not([lang]), html[lang=""] {
+  border-top: 20px solid red;
+}
+
+img:not([alt]), img[alt=""] {
+  border: 5px dashed red;
+}
+
+canvas:not([role]), canvas:not([aria-label]), canvas[role=""], canvas[aria-label=""] {
+  border: 5px dashed red;
+}
 
 
 /*
@@ -61,13 +69,17 @@ main {
   line-height: 1.4em;
   border-radius: 23px 13px 33px;
   /* box-sizing:border-box; this didn't work*/
+  position: relative;
 }
+
 #app > * {
   max-width: 567px;
 }
-h1{
+
+h1 {
   margin: 1em 0;
 }
+
 .title {
   color: #222222;
 }
@@ -77,9 +89,9 @@ h1{
 }
 
 .main-info:after {
-   content: "";
-   display: table;
-   clear: both;
+  content: "";
+  display: table;
+  clear: both;
 }
 
 hr {
@@ -126,6 +138,7 @@ textarea::before {
 ::-webkit-input-placeholder {
   text-align: center;
 }
+
 :-moz-placeholder {
   text-align: center;
 }
@@ -151,11 +164,13 @@ input:focus {
   font-size: 1em !important
 
 }
+
 input::placeholder {
   font-size: 2.2em;
   vertical-align: middle;
 
 }
+
 /*/input.add-item::placeholder {
  color: transparent;
 }*/
@@ -167,7 +182,7 @@ select {
   border: 0;
   -moz-appearance: none;
   -webkit-appearance: none;
-  appearance:none;
+  appearance: none;
 }
 
 /*Layout*/
@@ -175,8 +190,22 @@ section {
   padding: 10px;
 }
 
+nav {
+  width: calc(100% - 20px);
+  margin: 15px 10px;
+  padding: 10px 10px 8px;
+  outline: 0;
+  font-size: 1em;
+  border-radius: 1.5rem;
+  height: 62px;
+  background-color: #f8f8f8;
+  position: sticky;
+  bottom: 0;
+  box-sizing: border-box;
+}
+
 #prev,
-#suggestion{
+#suggestion {
   list-style: none;
   background: transparent;
   display: inline-flex;
@@ -188,17 +217,21 @@ section {
   margin: 0;
   width: 100vw;;
 }
+
 .suggestion-outer-wrapper > * {
   padding-left: 10px;
 }
+
 .suggestion-wrapper {
   overflow-x: scroll;
   height: 125px;
 }
+
 .previous-wrapper {
   overflow-x: scroll;
   height: 75px;
 }
+
 #suggestion,
 #previous {
   display: flex;
@@ -208,10 +241,12 @@ section {
   width: 800px; /* 400px works with first 8 in array of previous */
   align-items: flex-start;
 }
+
 #previous {
   height: 60px;
   background-color: transparent;
 }
+
 li#prev,
 #suggestion li {
   padding: 0.5em 1rem;

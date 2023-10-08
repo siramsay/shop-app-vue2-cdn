@@ -41,6 +41,9 @@ body
 font-variant-ligatures: normal;
 font-kerning: normal;
 */
+html, body {
+margin: 0; height: 100%; overflow: hidden;
+}
 
 
 body {
@@ -58,7 +61,7 @@ main {
 }
 
 #app {
-  background: #E8F5E9;
+  background: #87a0f2;
   color: #111111;
   letter-spacing: 0.04em;
   /*text-align: center;*/
@@ -168,7 +171,12 @@ input:focus {
 input::placeholder {
   font-size: 2.2em;
   vertical-align: middle;
+}
+input::-webkit-input-placeholder {
 
+  position: absolute;
+  top: 12px;
+  left: 4px;
 }
 
 /*/input.add-item::placeholder {
@@ -177,6 +185,7 @@ input::placeholder {
 input:focus::placeholder {
   color: transparent;
 }
+
 
 select {
   border: 0;
@@ -192,15 +201,15 @@ section {
 
 nav {
   width: calc(100% - 20px);
-  margin: 15px 10px;
+  margin: 15px 10px 0;
   padding: 10px 10px 8px;
   outline: 0;
   font-size: 1em;
   border-radius: 1.5rem;
   height: 62px;
   background-color: #f8f8f8;
-  position: sticky;
-  bottom: 0;
+  position: absolute;
+  bottom: 10px;
   box-sizing: border-box;
 }
 
@@ -259,4 +268,22 @@ li#prev,
   box-shadow: 2px 2px hsla(0, 0%, 11%, 25%);
 }
 
+.sl-inner-wrapper {
+  overflow-y: auto;
+  height: 400px;
+}
 
+.sl-inner-wrapper,
+.sl{
+  scrollbar-width: none;
+}
+
+.sl-inner-wrapper::-webkit-scrollbar,
+.sl::-webkit-scrollbar {
+  display: none;
+}
+
+.sl {
+  min-height: 450px;
+  margin-bottom: 50px;
+}

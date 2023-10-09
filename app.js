@@ -12,7 +12,11 @@ new Vue({
         {index: 'Burgers', product: 'Burgers', quantity: 4},
         {index: 'Potatoes', product: 'Potatoes', quantity: 10, isUrgent: true},
         {index: 'Apples', product: 'Apples', quantity: 12},
-        {index: 'Pancake Mix', product: 'Pancake Mix', quantity: 1}
+        {index: 'Pancake Mix', product: 'Pancake Mix', quantity: 1},
+        {index: 'Coke', product: 'Coke', quantity: 2},
+        {index: 'Nacho', product: 'Nacho', quantity: 1, isUrgent: true},
+        {index: 'Almond  Milk', product: 'Almond Milk', quantity: 1},
+        {index: 'Cookies', product: 'Cookies', quantity: 1}
       ],
       //selected: undefined,
       placeHolder: '',

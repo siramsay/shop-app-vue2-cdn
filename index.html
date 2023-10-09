@@ -31,6 +31,7 @@
   <!-- Todo: add a class to a v-for li element https://forum.vuejs.org/t/add-class-on-clicked-list-element-remove-class-from-not-clicked-elements/21771 -->
 
   <div id="app">
+
     <!--
     <div class="main-info">
        <span class="title"><h3>Shop App</h3></span>
@@ -42,41 +43,39 @@
      -->
 
     <section>
-    <input
-      v-model="inputItem"
-      v-on:keyup.enter="addItem"
-      placeholder="&#xf055 "
-      style="font-family:Arial, FontAwesome; font-size: 1em"
-    >
+      <input
+        type="text"
+        v-model="inputItem"
+        v-on:keyup.enter="addItem"
+        placeholder="&#xf055 "
+        style="font-family:Arial, FontAwesome; font-size: 1em"
+      >
     </section>
 
     <!-- Previous Product Suggestion -->
     <div class="suggestion-outer-wrapper">
-    <div v-if="previousProduct">
-      <div v-if="inputItem" class="previous-wrapper">
-        <!-- Previous Product Search -->
-        <!--<button @click="filterPre()">Filter</button>-->
-        <ul id="previous">
-          <li id="prev"
-              v-for="(item, index) in filterPre"
-              v-on:click="addPreviousItem(item)">{{ item }}
-          </li>
-        </ul>
-      </div>
+      <div v-if="previousProduct">
+        <div v-if="inputItem" class="previous-wrapper">
+          <!-- Previous Product Search -->
+          <!--<button @click="filterPre()">Filter</button>-->
+          <ul id="previous">
+            <li id="prev"
+                v-for="(item, index) in filterPre"
+                v-on:click="addPreviousItem(item)">{{ item }}
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 
 
-
-      <!--
-      <div v-else>
-      <ul id="suggestion" v-for="(item, index) in previousProduct">
-        <li v-on:click="addPreviousItem(item)">{{ item }}</li>
-      </ul>
-      </div>
-      -->
-
-
+    <!--
+    <div v-else>
+    <ul id="suggestion" v-for="(item, index) in previousProduct">
+      <li v-on:click="addPreviousItem(item)">{{ item }}</li>
+    </ul>
+    </div>
+    -->
 
 
     <!-- Add Item(S) -->
@@ -108,40 +107,49 @@
     </div>
 
     <section>
-    <h3>Urgent</h3>
-    <ul>
-      <li v-if="item.isUrgent" v-for="(item, index) in shopList">{{ item.product }} ( {{ item.quantity }} ) </li>
-    </ul>
+      <h3>Urgent</h3>
+      <ul>
+        <li v-if="item.isUrgent" v-for="(item, index) in shopList">{{ item.product }} ( {{ item.quantity }} )</li>
+      </ul>
     </section>
-    <section>
-    <h3>Shopping List</h3>
-    <br>
-    <button @click="sortA()">A - Z</button>
-    <button @click="sortLowest()">Sort Lowest</button>
-    <button @click="sortHighest()">Sort Highest</button>
-    <ul>
+    <section class="sl-wrapper">
+      <div class="sl-inner-wrapper">
+        <div class="sl">
+          <h3>Shopping List</h3>
+          <br>
+          <button @click="sortA()">A - Z</button>
+          <button @click="sortLowest()">Sort Lowest</button>
+          <button @click="sortHighest()">Sort Highest</button>
+          <ul>
 
-      <li v-for="(item, index) in shopList">
+            <li v-for="(item, index) in shopList">
 
         <span v-if="!item.edit">
                 {{ item.product }} ( {{ item.quantity }} )  <button
           v-on:click="$set(item, 'edit', !item.edit)">Edit</button>
         </span>
 
-        <div v-if="item.edit">
-          {{ item.product }} <input v-model="item.quantity"
-                                    style="display: inline;
+              <div v-if="item.edit">
+                {{ item.product }} <input v-model="item.quantity"
+                                          style="display: inline;
                                     width: 6em;
                                     border: 0 solid; padding: 0">
-          <button v-on:click="item.quantity = item.quantity-1"> -</button>
-          <button v-on:click="item.quantity = item.quantity+1"> +</button>
-          <button v-on:click="item.edit = false">Save</button>
+                <button v-on:click="item.quantity = item.quantity-1"> -</button>
+                <button v-on:click="item.quantity = item.quantity+1"> +</button>
+                <button v-on:click="item.edit = false">Save</button>
+              </div>
+
+
+            </li>
+          </ul>
         </div>
-
-
-      </li>
-    </ul>
+      </div>
     </section>
+
+    <nav>
+
+    </nav>
+
   </div>
 
 </main>

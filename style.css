@@ -66,7 +66,8 @@ main {
   letter-spacing: 0.04em;
   /*text-align: center;*/
   width: 375px;
-  height: 812px;
+  height: 100vh;
+  max-height: 812px;
   margin: 0 auto;
   display: table;
   line-height: 1.4em;
@@ -137,26 +138,15 @@ textarea::before {
   content: "\f044";
 
 }
-
-::-webkit-input-placeholder {
-  text-align: center;
-}
-
-:-moz-placeholder {
-  text-align: center;
-}
-
 .wrapper-button {
   float: right;
   margin: 0 10px;
 }
-
 li.highlight, .completed {
   background: gainsboro;
   text-decoration: line-through;
   opacity: 0.7;
 }
-
 select,
 textarea,
 input[type="text"],
@@ -164,16 +154,29 @@ input[type="submit"],
 input[type="email"],
 input[type="password"],
 input:focus {
-  font-size: 1em !important
-
+  font-size: 1em;
 }
 
+/*
+::-webkit-input-placeholder {
+  text-align: center;
+}
+:-moz-placeholder {
+  text-align: center;
+}*/
+
+input[type='text']{
+  font-size: 2.2rem;
+  line-height: 2.2rem;
+}
 input::placeholder {
   font-size: 2.2em;
   vertical-align: middle;
+  line-height: 2.2rem;
 }
-input::-webkit-input-placeholder {
 
+input::-webkit-input-placeholder {
+  vertical-align: middle;
   position: absolute;
   top: 12px;
   left: 4px;
@@ -207,7 +210,7 @@ nav {
   font-size: 1em;
   border-radius: 1.5rem;
   height: 62px;
-  background-color: #f8f8f8;
+  background-color: #1e3eff;
   position: absolute;
   bottom: 10px;
   box-sizing: border-box;
@@ -271,19 +274,13 @@ li#prev,
 .sl-inner-wrapper {
   overflow-y: auto;
   height: 400px;
-}
-
-.sl-inner-wrapper,
-.sl{
   scrollbar-width: none;
 }
 
-.sl-inner-wrapper::-webkit-scrollbar,
-.sl::-webkit-scrollbar {
+.sl-inner-wrapper::-webkit-scrollbar {
   display: none;
 }
 
 .sl {
-  min-height: 450px;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
 }

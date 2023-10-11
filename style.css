@@ -224,12 +224,19 @@ nav menu {
 }
 nav menu li {
   padding: 0 10px;
+  cursor: pointer;
+  border-bottom: 0 solid #ccc;
 }
 nav menu li:first-child {
   margin-right: auto;
 }
+nav menu li svg {
+  height: 32px;
+  width: 32px;
+  fill: white;
+}
 
-#prev,
+ #prev,
 #suggestion {
   list-style: none;
   background: transparent;
@@ -271,7 +278,6 @@ nav menu li:first-child {
   height: 60px;
   background-color: transparent;
 }
-
 li#prev,
 #suggestion li {
   padding: 0.5em 1rem;
@@ -283,17 +289,14 @@ li#prev,
 
   box-shadow: 2px 2px hsla(0, 0%, 11%, 25%);
 }
-
 .sl-inner-wrapper {
   overflow-y: auto;
   height: 400px;
   scrollbar-width: none;
 }
-
 .sl-inner-wrapper::-webkit-scrollbar {
   display: none;
 }
-
 .sl {
   margin-bottom: 80px;
 }

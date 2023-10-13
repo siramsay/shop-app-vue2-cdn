@@ -28,13 +28,16 @@ new Vue({
     }
   },
   methods: {
+    focusInput() {
+      document.querySelector("input").focus();
+    },
     makeSequence() {
       this.selectNums = [...Array(101).keys()]  //  todo: slice/pop 0 off the front
     },
     clearPlaceholder () {
       //if (this.inputItem.length === 0) {
         //document.querySelector("input").removeAttribute('placeholder');
-      document.querySelector("input").classList.add('add-item');
+      //document.querySelector("input").classList.add('add-item');
       //}
     },
     addItem() {
@@ -42,6 +45,7 @@ new Vue({
         //this.newItem2 = this.newItem;
         this.newItem.push({index: this.inputItem, itemName: this.inputItem, num: 1});
         this.inputItem = '';
+        document.querySelector("input").blur();
       } else {
         alert("You need to add an item")
       }

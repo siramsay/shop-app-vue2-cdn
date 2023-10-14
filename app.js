@@ -1,6 +1,8 @@
 new Vue({
+  //import urgentList from 'urgentList.vue'
   el: '#app',
   //data: {
+
   data() {
     return {
       inputItem: '',

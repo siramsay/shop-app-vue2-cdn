@@ -5,6 +5,7 @@ new Vue({
 
   data() {
     return {
+      currentList: true,
       inputItem: '',
       newItem: [],
       selectNums: [],

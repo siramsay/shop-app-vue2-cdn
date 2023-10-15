@@ -106,23 +106,23 @@
       </div>
     </div>
 
-    <section class="sl-wrapper">
+    <div class="tabs"><h3 v-on:click="currentList = false">Shopping List</h3> <h3 v-on:click="currentList = true">Urgent</h3></div>
+
+
+
+    <section v-if="currentList === true" class="sl-wrapper">
       <div class="sl-inner-wrapper">
         <div class="sl">
-          <h3>Urgent</h3>
+
           <ul>
             <li v-if="item.isUrgent" v-for="(item, index) in shopList">{{ item.product }} ( {{ item.quantity }} )</li>
           </ul>
         </div>
       </div>
     </section>
-
-    <!--
-    <section class="sl-wrapper">
+    <section v-else class="sl-wrapper">
       <div class="sl-inner-wrapper">
         <div class="sl">
-          <h3>Shopping List</h3>
-          <br>
           <button @click="sortA()">A - Z</button>
           <button @click="sortLowest()">Sort Lowest</button>
           <button @click="sortHighest()">Sort Highest</button>
@@ -151,7 +151,7 @@
         </div>
       </div>
     </section>
-    -->
+
 
     <nav>
       <menu>

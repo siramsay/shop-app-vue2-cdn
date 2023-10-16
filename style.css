@@ -45,7 +45,6 @@ html, body {
 margin: 0; height: 100%; overflow: hidden;
 }
 
-
 body {
   margin: 0;
   background-color: #4BC2A5;
@@ -236,11 +235,21 @@ nav menu li svg {
   fill: white;
 }
 
- #prev,
+#prev,
 #suggestion {
   list-style: none;
   background: transparent;
   display: inline-flex;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  padding: 10px;
+}
+.tabs h3  {
+  display: inline;
+  width: 50%;
 }
 
 .suggestion-outer-wrapper {

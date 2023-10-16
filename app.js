@@ -1,8 +1,11 @@
 new Vue({
+  //import urgentList from 'urgentList.vue'
   el: '#app',
   //data: {
+
   data() {
     return {
+      currentList: true,
       inputItem: '',
       newItem: [],
       selectNums: [],

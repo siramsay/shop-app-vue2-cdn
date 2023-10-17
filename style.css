@@ -197,7 +197,7 @@ select {
 }
 
 /*Layout*/
-section {
+section.input {
   padding: 10px;
 }
 
@@ -245,11 +245,21 @@ nav menu li svg {
 /* Tabs */
 .tabs {
   display: flex;
-  padding: 10px;
 }
 .tabs h3  {
-  display: inline;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
   width: 50%;
+  height: 3rem;
+}
+.tabs h3:first-child  {
+  background-color: #ffffff;
+  border-radius: 2rem 0 0 0 ;
+}
+.tabs h3:nth-child(2)  {
+  background-color: #ffa946;
+  border-radius: 0 2rem 0 0 ;
 }
 
 .suggestion-outer-wrapper {
@@ -265,7 +275,8 @@ nav menu li svg {
 
 .suggestion-wrapper {
   overflow-x: scroll;
-  height: 125px;
+  height: 115px;
+  margin-bottom: 5px;
 }
 
 .previous-wrapper {

@@ -110,7 +110,10 @@
       </div>
     </div>
 
-    <div class="tabs"><h3 v-on:click="currentList = false" ><span>Shopping List</span></h3> <h3 v-on:click="currentList = true">Urgent</h3></div>
+    <div class="tabs">
+      <h3 v-on:click="currentList = false" v-bind:class="(currentList === true)?'blue':''">Shopping List</h3>
+      <h3 v-on:click="currentList = true" v-bind:class="(currentList === false)?'orange':''">Urgent</h3>
+    </div>
 
 
 
@@ -134,7 +137,7 @@
           -->
           <ul>
 
-            <li v-for="(item, index) in shopList">
+            <li v-for="(item, index) in shopList.slice().reverse()">
 
         <span v-if="!item.edit">
                 {{ item.product }} ( {{ item.quantity }} )  <button
@@ -144,8 +147,9 @@
               <div v-if="item.edit">
                 {{ item.product }} <input v-model="item.quantity"
                                           style="display: inline;
-                                    width: 6em;
-                                    border: 0 solid; padding: 0">
+                                          width: 6em;
+                                          border: 0 solid;
+                                          padding: 0">
                 <button v-on:click="item.quantity = item.quantity-1"> -</button>
                 <button v-on:click="item.quantity = item.quantity+1"> +</button>
                 <button v-on:click="item.edit = false">Save</button>

@@ -78,19 +78,15 @@ main {
 #app > * {
   max-width: 567px;
 }
-
 h1 {
   margin: 1em 0;
 }
-
 .title {
   color: #222222;
 }
-
 .main-info {
   text-align: left;
 }
-
 .main-info:after {
   content: "";
   display: table;
@@ -204,7 +200,7 @@ section.input {
 nav {
   width: calc(100% - 20px);
   margin: 15px 10px 0;
-  padding: 10px 10px 8px 0;
+  padding: 10px;
   outline: 0;
   font-size: 1em;
   border-radius: 1.5rem;
@@ -213,6 +209,9 @@ nav {
   position: absolute;
   bottom: 10px;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 2px #000000;
 }
 nav menu {
   display: flex;
@@ -220,6 +219,8 @@ nav menu {
   justify-content: flex-end;
   color: #ffffff;
   padding: 0;
+  width: 100%;
+  height: 28px;
 }
 nav menu li {
   padding: 0 10px;
@@ -230,7 +231,7 @@ nav menu li:first-child {
   margin-right: auto;
 }
 nav menu li svg {
-  height: 32px;
+  height: 28px;
   width: 32px;
   fill: white;
 }
@@ -249,17 +250,25 @@ nav menu li svg {
 .tabs h3  {
   display: flex;
   align-items: center;
-  padding-left: 15px;
+  padding-left: 25px;
   width: 50%;
   height: 3rem;
-}
-.tabs h3:first-child  {
+  cursor: pointer;
   background-color: #ffffff;
-  border-radius: 2rem 0 0 0 ;
 }
-.tabs h3:nth-child(2)  {
-  background-color: #ffa946;
-  border-radius: 0 2rem 0 0 ;
+.tabs h3:first-child {
+  border-radius: 2rem 0 0 0;
+}
+.tabs h3.blue {
+  color: #f8f8f8;
+  background-color: #527eac; /* AA */
+}
+.tabs h3:nth-child(2) {
+  border-radius: 0 2rem 0 0;
+}
+.tabs h3.orange {
+  color: #f8f8f8;
+  background-color: #d77504; /* AA */
 }
 
 .suggestion-outer-wrapper {
@@ -311,7 +320,7 @@ li#prev,
 }
 .sl-inner-wrapper {
   overflow-y: auto;
-  height: 400px;
+  height: 500px;
   scrollbar-width: none;
 }
 .sl-inner-wrapper::-webkit-scrollbar {

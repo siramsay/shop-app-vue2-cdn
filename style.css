@@ -119,7 +119,7 @@ textarea {
   /*width: calc(100% - 30px);
   width: 330px;*/
   width: 100%;
-  margin: 15px 0;
+  margin: 0 0 15px 0;
   padding: 10px 10px 8px;
   outline: 0;
   font-size: 1em;
@@ -131,7 +131,6 @@ textarea::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f044";
-
 }
 .wrapper-button {
   float: right;
@@ -159,7 +158,6 @@ input:focus {
 :-moz-placeholder {
   text-align: center;
 }*/
-
 input[type='text']{
   font-size: 2.2rem;
   line-height: 2.2rem;
@@ -169,7 +167,6 @@ input::placeholder {
   vertical-align: middle;
   line-height: 2.2rem;
 }
-
 input::-webkit-input-placeholder {
   vertical-align: middle;
   position: absolute;
@@ -183,15 +180,12 @@ input::-webkit-input-placeholder {
 input:focus::placeholder {
   color: transparent;
 }
-
-
 select {
   border: 0;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
 }
-
 /*Layout*/
 section.input {
   padding: 10px;
@@ -275,24 +269,36 @@ nav menu li svg {
   overflow-x: hidden;
   overflow-y: hidden;
   margin: 0;
-  width: 100vw;;
+  width: 100vw;
 }
-
 .suggestion-outer-wrapper > * {
   padding-left: 10px;
 }
-
 .suggestion-wrapper {
   overflow-x: scroll;
+  overflow-y: hidden;
   height: 115px;
   margin-bottom: 5px;
+  /*scrollbar-width: none;
+  scrollbar-color: red orange;*/
+  scrollbar-width: thin;
+}
+
+/* Chrome */
+.suggestion-wrapper::-webkit-scrollbar {
+  height: 8px;
+  width: 1px;
+  background-color: white;
+}
+.suggestion-wrapper::-webkit-scrollbar-thumb {
+  background: darkgrey;
+  height: 4px;
 }
 
 .previous-wrapper {
   overflow-x: scroll;
   height: 75px;
 }
-
 #suggestion,
 #previous {
   display: flex;
@@ -302,7 +308,6 @@ nav menu li svg {
   width: 800px; /* 400px works with first 8 in array of previous */
   align-items: flex-start;
 }
-
 #previous {
   height: 60px;
   background-color: transparent;

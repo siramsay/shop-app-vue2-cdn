@@ -330,9 +330,14 @@ li#prev,
 }
 .sl-inner-wrapper {
   overflow-y: auto;
-  height: 400px;
+  height: 300px;
   scrollbar-width: none;
   border-radius: 0 0 2rem 2rem;
+}
+@media screen and (min-height: 710px) {
+  .sl-inner-wrapper {
+    height: 400px;
+  }
 }
 .sl-inner-wrapper::-webkit-scrollbar {
   display: none;

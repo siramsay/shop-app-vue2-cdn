@@ -312,8 +312,15 @@ nav menu li svg {
   height: 60px;
   background-color: transparent;
 }
+#add {
+  list-style: none;
+  padding: 0;
+  background: transparent;
+  display: flex;
+}
 li#prev,
-#suggestion li {
+#suggestion li,
+#add li {
   padding: 0.5em 1rem;
   border: 0 solid;
   background-color: #c0d5de;

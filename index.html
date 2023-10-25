@@ -118,12 +118,9 @@
       <h3 v-on:click="currentList = true" v-bind:class="(currentList === false)?'orange':''">Urgent</h3>
     </div>
 
-
-
     <section v-if="currentList === true" class="sl-wrapper">
       <div class="sl-inner-wrapper">
         <div class="sl">
-
           <ul>
             <li v-if="item.isUrgent" v-for="(item, index) in shopList">{{ item.product }} ( {{ item.quantity }} )</li>
           </ul>
@@ -139,13 +136,12 @@
           <button @click="sortHighest()">Sort Highest</button>
           -->
           <ul>
-
             <li v-for="(item, index) in shopList.slice().reverse()">
 
-        <span v-if="!item.edit">
-                {{ item.product }} ( {{ item.quantity }} )  <button
-          v-on:click="$set(item, 'edit', !item.edit)">Edit</button>
-        </span>
+              <span v-if="!item.edit">
+                {{ item.product }} ( {{ item.quantity }} )
+                <button v-on:click="$set(item, 'edit', !item.edit)">Edit</button>
+              </span>
 
               <div v-if="item.edit">
                 {{ item.product }} <input v-model="item.quantity"
@@ -158,13 +154,11 @@
                 <button v-on:click="item.edit = false">Save</button>
               </div>
 
-
             </li>
           </ul>
         </div>
       </div>
     </section>
-
 
     <nav>
       <menu>
@@ -192,9 +186,7 @@
       </menu>
     </nav>
 
-
   </div>
-
 </main>
 
 </body>

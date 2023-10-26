@@ -132,10 +132,6 @@ textarea::before {
   font-weight: 900;
   content: "\f044";
 }
-.wrapper-button {
-  float: right;
-  margin: 0 10px;
-}
 li.highlight, .completed {
   background: gainsboro;
   text-decoration: line-through;
@@ -270,9 +266,11 @@ nav menu li svg {
   overflow-y: hidden;
   margin: 0;
   width: 100vw;
+  height: 165px;
 }
 .suggestion-outer-wrapper > * {
   padding-left: 10px;
+  padding-right: 10px;
 }
 .suggestion-wrapper {
   overflow-x: scroll;
@@ -312,11 +310,22 @@ nav menu li svg {
   height: 60px;
   background-color: transparent;
 }
+
+.add-wrapper {
+  display: flex;
+}
+.add-wrapper:nth-child(2) {
+  display: flex;
+  justify-content: flex-end;
+}
 #add {
   list-style: none;
   padding: 0;
   background: transparent;
   display: flex;
+}
+.wrapper-button {
+  margin: 0 0 0 auto;
 }
 li#prev,
 #suggestion li,

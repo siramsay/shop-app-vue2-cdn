@@ -327,6 +327,19 @@ nav menu li svg {
 .wrapper-button {
   margin: 0 0 0 auto;
 }
+
+.wrapper-button button {
+   appearance: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background-image: radial-gradient(white 50%,transparent 50%);
+}
+.wrapper-button button svg {
+  height: 39px;
+  fill: #1c1c1c;
+}
+
 li#prev,
 #suggestion li,
 #add li {

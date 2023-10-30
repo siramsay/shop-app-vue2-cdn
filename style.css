@@ -260,7 +260,6 @@ nav menu li svg {
   color: #f8f8f8;
   background-color: #d77504; /* AA */
 }
-
 .suggestion-outer-wrapper {
   overflow-x: hidden;
   overflow-y: hidden;
@@ -292,7 +291,6 @@ nav menu li svg {
   background: darkgrey;
   height: 4px;
 }
-
 .previous-wrapper {
   /* overflow-x: scroll;  todo: remove this  */
   height: 75px;
@@ -310,7 +308,6 @@ nav menu li svg {
   height: 60px;
   background-color: transparent;
 }
-
 .add-wrapper {
   display: flex;
 }
@@ -326,6 +323,26 @@ nav menu li svg {
 }
 .wrapper-button {
   margin: 0 0 0 auto;
+}
+.wrapper-button button {
+  appearance: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background-image: radial-gradient(white 50%,transparent 50%);
+}
+.wrapper-button button svg {
+  height: 39px;
+  fill: #1c1c1c;
+}
+.add-wrapper button.button-round {
+  padding: 0.5em 1rem;
+  border: 0 solid;
+  background-color: #c0d5de;
+  border-radius: 1.5em;
+  margin: .2rem 1rem .2rem 0;
+  flex-basis: fit-content;
+  box-shadow: 2px 2px hsla(0, 0%, 11%, 25%);
 }
 li#prev,
 #suggestion li,

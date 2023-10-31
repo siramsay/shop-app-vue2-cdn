@@ -181,6 +181,7 @@ select {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
+  float: right;
 }
 /*Layout*/
 section.input {
@@ -314,12 +315,16 @@ nav menu li svg {
 .add-wrapper:nth-child(2) {
   display: flex;
   justify-content: flex-end;
+  padding-top: .5rem;
 }
 #add {
   list-style: none;
   padding: 0;
   background: transparent;
   display: flex;
+}
+#add li {
+  min-width: 200px;
 }
 .wrapper-button {
   margin: 0 0 0 auto;
@@ -332,17 +337,18 @@ nav menu li svg {
   background-image: radial-gradient(white 50%,transparent 50%);
 }
 .wrapper-button button svg {
-  height: 39px;
+  height: 45px;
   fill: #1c1c1c;
 }
 .add-wrapper button.button-round {
-  padding: 0.5em 1rem;
+  padding: 0.8em 1rem;
   border: 0 solid;
   background-color: #c0d5de;
   border-radius: 1.5em;
   margin: .2rem 1rem .2rem 0;
-  flex-basis: fit-content;
+  /*flex-basis: fit-content;*/
   box-shadow: 2px 2px hsla(0, 0%, 11%, 25%);
+  width: 75px;
 }
 li#prev,
 #suggestion li,

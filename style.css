@@ -92,27 +92,29 @@ h1 {
   display: table;
   clear: both;
 }
-
 hr {
   border-top: 0;
   border-bottom: 1px solid #555;
 }
-
 ul {
-  background-color: #fff;;
+  /*background-color: hsla(360deg, 100%, 100%, 0.5);*/
+  padding-left: 20px;
 }
-
 li {
-  /* list-style: none outside none; */
+  list-style: none outside none;
   text-align: left;
   padding: 10px 0;
   border-bottom: 1px solid #ccc;
 }
-
+li span {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20px;
+}
 li.newClass {
   color: pink;
 }
-
 input,
 textarea {
   font-family: serif;
@@ -126,7 +128,6 @@ textarea {
   border-radius: 1.5rem;
   height: 62px;
 }
-
 textarea::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
@@ -169,7 +170,6 @@ input::-webkit-input-placeholder {
   top: 12px;
   left: 4px;
 }
-
 /*/input.add-item::placeholder {
  color: transparent;
 }*/
@@ -187,7 +187,6 @@ select {
 section.input {
   padding: 10px;
 }
-
 nav {
   width: calc(100% - 20px);
   margin: 15px 10px 0;
@@ -364,8 +363,8 @@ li#prev,
 }
 
 .sl-wrapper {
-  background-color: #fff;
-  border-radius: 2rem;
+  background-color: #ffffffd1; /* hsla(360deg, 100%, 100%, 0.5) */
+  border-radius: 0 0 2rem 2rem;
 }
 .sl-inner-wrapper {
   overflow-y: auto;

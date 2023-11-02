@@ -151,7 +151,7 @@
 
               <span v-if="!item.edit">
                 {{ item.product }} ( {{ item.quantity }} )
-                <button v-on:click="$set(item, 'edit', !item.edit)">Edit</button>
+                <button v-on:click="$set(item, 'edit', !item.edit)" class="button-round">Edit</button>
               </span>
 
               <div v-if="item.edit">

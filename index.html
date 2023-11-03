@@ -159,10 +159,14 @@
                                           style="display: inline;
                                           width: 6em;
                                           border: 0 solid;
-                                          padding: 0">
-                <button v-on:click="item.quantity = item.quantity-1"> -</button>
-                <button v-on:click="item.quantity = item.quantity+1"> +</button>
-                <button v-on:click="item.edit = false">Save</button>
+                                          padding: 0;
+                                          height: 32px"
+                                          class="edit-input">
+
+                   <button v-on:click="item.quantity = item.quantity-1"> -</button>
+                   <button v-on:click="item.quantity = item.quantity+1"> +</button>
+                   <button v-on:click="item.edit = false" class="button-round">Save</button>
+                <!--<span></span>-->
               </div>
 
             </li>

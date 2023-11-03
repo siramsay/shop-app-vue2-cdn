@@ -242,7 +242,7 @@ nav menu li svg {
   width: 50%;
   height: 3rem;
   cursor: pointer;
-  background-color: #ffffff;
+  background-color: #ffffffd1; /*hsla(360deg, 100%, 100%, 0.5);*/
 }
 .tabs h3:first-child {
   border-radius: 2rem 0 0 0;
@@ -338,7 +338,8 @@ nav menu li svg {
   fill: #1c1c1c;
 }
 .add-wrapper button.button-round,
-span button.button-round {
+span button.button-round,
+.button-round {
   padding: 0.8em 1rem;
   border: 0 solid;
   background-color: #c0d5de;

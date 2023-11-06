@@ -110,10 +110,8 @@ li span {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-right: 20px;
-}
-li.newClass {
-  color: pink;
 }
 input,
 textarea {
@@ -244,7 +242,7 @@ nav menu li svg {
   width: 50%;
   height: 3rem;
   cursor: pointer;
-  background-color: #ffffff;
+  background-color: #ffffffd1; /*hsla(360deg, 100%, 100%, 0.5);*/
 }
 .tabs h3:first-child {
   border-radius: 2rem 0 0 0;
@@ -339,7 +337,9 @@ nav menu li svg {
   height: 45px;
   fill: #1c1c1c;
 }
-.add-wrapper button.button-round {
+.add-wrapper button.button-round,
+span button.button-round,
+.button-round {
   padding: 0.8em 1rem;
   border: 0 solid;
   background-color: #c0d5de;
@@ -361,6 +361,15 @@ li#prev,
 
   box-shadow: 2px 2px hsla(0, 0%, 11%, 25%);
 }
+.edit-input {
+  display: inline;
+  width: 6em;
+  border: 0 solid;
+  padding: 0;
+  height: 32px;
+  margin-bottom: 0
+}
+
 
 .sl-wrapper {
   background-color: #ffffffd1; /* hsla(360deg, 100%, 100%, 0.5) */

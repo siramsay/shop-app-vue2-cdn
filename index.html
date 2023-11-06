@@ -151,18 +151,17 @@
 
               <span v-if="!item.edit">
                 {{ item.product }} ( {{ item.quantity }} )
-                <button v-on:click="$set(item, 'edit', !item.edit)">Edit</button>
+                <button v-on:click="$set(item, 'edit', !item.edit)" class="button-round">Edit</button>
               </span>
 
               <div v-if="item.edit">
                 {{ item.product }} <input v-model="item.quantity"
-                                          style="display: inline;
-                                          width: 6em;
-                                          border: 0 solid;
-                                          padding: 0">
-                <button v-on:click="item.quantity = item.quantity-1"> -</button>
-                <button v-on:click="item.quantity = item.quantity+1"> +</button>
-                <button v-on:click="item.edit = false">Save</button>
+                                          class="edit-input">
+
+                   <button v-on:click="item.quantity = item.quantity-1"> -</button>
+                   <button v-on:click="item.quantity = item.quantity+1"> +</button>
+                   <button v-on:click="item.edit = false" class="button-round">Save</button>
+                <!--<span></span>-->
               </div>
 
             </li>

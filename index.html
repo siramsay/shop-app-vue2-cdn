@@ -156,11 +156,6 @@
 
               <div v-if="item.edit">
                 {{ item.product }} <input v-model="item.quantity"
-                                          style="display: inline;
-                                          width: 6em;
-                                          border: 0 solid;
-                                          padding: 0;
-                                          height: 32px"
                                           class="edit-input">
 
                    <button v-on:click="item.quantity = item.quantity-1"> -</button>

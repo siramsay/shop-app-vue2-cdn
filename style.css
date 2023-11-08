@@ -332,6 +332,7 @@ nav menu li svg {
   border: 1px solid transparent;
   border-radius: 50%;
   background-image: radial-gradient(white 50%,transparent 50%);
+  height: 45px;
 }
 .wrapper-button button svg {
   height: 45px;
@@ -352,7 +353,7 @@ span button.button-round,
 li#prev,
 #suggestion li,
 #add li {
-  padding: 0.5em 1rem;
+  padding: 0.8em 1rem;
   border: 0 solid;
   background-color: #c0d5de;
   border-radius: 1.5em;
@@ -360,6 +361,7 @@ li#prev,
   flex-basis: fit-content;
 
   box-shadow: 2px 2px hsla(0, 0%, 11%, 25%);
+  height: 45px;
 }
 .edit-input {
   display: inline;
@@ -391,4 +393,19 @@ li#prev,
 }
 .sl {
   margin-bottom: 80px;
+}
+.sl .item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+.sl input {
+  /*text-align: center;*/
+}
+.sl button.button-round {
+  margin-right: 0;
+}
+.sl .item span {
+  justify-self: flex-start;
 }

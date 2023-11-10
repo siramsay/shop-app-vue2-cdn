@@ -107,11 +107,9 @@ li {
   border-bottom: 1px solid #ccc;
 }
 li span {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-right: 20px;
 }
 input,
 textarea {
@@ -365,11 +363,12 @@ li#prev,
 }
 .edit-input {
   display: inline;
-  width: 6em;
+  width: 2rem;
   border: 0 solid;
   padding: 0;
   height: 32px;
-  margin-bottom: 0
+  margin-bottom: 0;
+  text-align: center;
 }
 
 
@@ -400,8 +399,18 @@ li#prev,
   justify-content: flex-end;
   padding-right: 20px;
 }
+.sl .item .product-title {
+  flex-basis: 100%;
+}
+.sl .item .product-title + span {
+  flex-basis: 40%;
+  padding-left: 10px;
+}
 .sl input {
   /*text-align: center;*/
+}
+.sl .wrapper-button button svg {
+  height: 38px;
 }
 .sl button.button-round {
   margin-right: 0;

@@ -136,12 +136,12 @@
             <li v-if="item.isUrgent" v-for="(item, index) in shopList">
               <!-- {{ item.product }} ( {{ item.quantity }} )  -->
                <span class="item" v-if="!item.edit">
-                <span>{{ item.product }}</span><span style="padding-left: 10px;">{{ item.quantity }}</span>
+                <span class="product-title">{{ item.product }}</span><span>{{ item.quantity }}</span>
                 <button v-on:click="$set(item, 'edit', !item.edit)" class="button-round">Edit</button>
               </span>
 
               <div class="item" v-if="item.edit">
-                <span>{{ item.product }}</span> <input v-model="item.quantity"
+                <span class="product-title">{{ item.product }}</span> <input v-model="item.quantity"
                                                        class="edit-input">
 
                 <span class="wrapper-button">
@@ -177,12 +177,12 @@
             <li v-for="(item, index) in shopList.slice().reverse()">
 
               <span class="item" v-if="!item.edit">
-                <span>{{ item.product }}</span><span style="padding-left: 10px;">{{ item.quantity }}</span>
+                <span class="product-title">{{ item.product }}</span><span style="padding-left: 10px;">{{ item.quantity }}</span>
                 <button v-on:click="$set(item, 'edit', !item.edit)" class="button-round">Edit</button>
               </span>
 
               <div class="item" v-if="item.edit">
-                <span>{{ item.product }}</span> <input v-model="item.quantity"
+                <span class="product-title">{{ item.product }}</span> <input v-model="item.quantity"
                                           class="edit-input">
 
                 <span class="wrapper-button">

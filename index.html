@@ -52,6 +52,7 @@
       >
     </section>
 
+    <!-- Start Screen -->
     <div class="suggestion-outer-wrapper" v-if="newItem.length === 0 && !inputItem">
       <h4>Suggested Regularly Bought</h4> <br>
       <div class="suggestion-wrapper">
@@ -61,7 +62,7 @@
       </div>
     </div>
 
-    <!-- Previous Product Suggestion -->
+    <!-- Suggestion: Preemptive Previous Product Suggestion -->
     <div v-if="inputItem.length > 0" class="suggestion-outer-wrapper">
       <h4>Suggestion</h4> <br>
       <div class="suggestion-wrapper" v-if="previousProduct">
@@ -78,18 +79,8 @@
       </div>
     </div>
 
-    <!--
-    <div v-else>
-    <ul id="suggestion" v-for="(item, index) in previousProduct">
-      <li v-on:click="addPreviousItem(item)">{{ item }}</li>
-    </ul>
-    </div>
-    -->
-
-
     <!-- Add Item(S) -->
-
-    <div class="suggestion-outer-wrapper" v-if="newItem.length > 0">
+    <div class="suggestion-outer-wrapper" v-if="newItem.length > 0 && !inputItem.length">
       <h4>Add Item</h4> <br>
 
       <div v-for="(item, index) in newItem" >
@@ -124,6 +115,7 @@
 
     </div>
 
+    <!-- Lists -->
     <div class="tabs">
       <h3 v-on:click="currentList = false" v-bind:class="(currentList === true)?'blue':''">Shopping List</h3>
       <h3 v-on:click="currentList = true" v-bind:class="(currentList === false)?'orange':''">Urgent</h3>

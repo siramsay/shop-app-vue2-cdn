@@ -61,11 +61,17 @@ main {
 
 #app {
   background: #87a0f2;
-  background-image: radial-gradient(
+  /*background-image: radial-gradient(
           circle at 80% 240px,
           rgba(155, 42, 42, 0.56) 20%,
           rgba(84, 84, 84, 0.56) 46%,
-          rgba(48, 63, 111, 0.56) 80%);
+          rgba(48, 63, 111, 0.56) 80%),*/
+  background-image: linear-gradient(
+          90deg,
+          rgba(124,131,254,1) 0%,
+          rgba(124,172,254,1) 35%,
+          rgba(115,171,210,1) 90%,
+          rgba(106,168,209,1) 100%);
   color: #111111;
   letter-spacing: 0.04em;
   /*text-align: center;*/

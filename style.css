@@ -47,7 +47,7 @@ margin: 0; height: 100%; overflow: hidden;
 
 body {
   margin: 0;
-  background-color: #4BC2A5;
+  background-color: #F2F2F2;
   font-family: sans-serif;
 }
 
@@ -348,7 +348,7 @@ span button.button-round,
 .button-round {
   padding: 0.8em 1rem;
   border: 0 solid;
-  background-color: #c0d5de;
+  background-color: #dce3e6;
   border-radius: 1.5em;
   margin: .2rem 1rem .2rem 0;
   /*flex-basis: fit-content;*/
@@ -424,4 +424,12 @@ li#prev,
 }
 .sl .item span {
   justify-self: flex-start;
+}
+
+/* Transitions */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 2.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }

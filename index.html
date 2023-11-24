@@ -63,8 +63,8 @@
     </div>
 
     <!-- Suggestion: Preemptive Previous Product Suggestion -->
-    <div v-if="inputItem.length > 0" class="suggestion-outer-wrapper">
-      <h4>Suggestion</h4> <br>
+    <div v-if="inputItem.length > 0" class="suggestion-outer-wrapper preemptive-suggestions">
+      <!--h4>Suggestion</h4> <br>-->
       <div class="suggestion-wrapper" v-if="previousProduct">
         <div v-if="inputItem" class="previous-wrapper">
           <!-- Previous Product Search -->
@@ -80,9 +80,9 @@
     </div>
 
     <!-- Add Item(S) -->
-    <transition name="fade-"> <!--  Fade commented out -->
-    <div class="suggestion-outer-wrapper" v-if="newItem.length > 0 && !inputItem.length">
-      <h4>Add Item</h4> <br>
+     <!--   <transition name="fade-"> </transition> Fade commented out -->
+    <div class="suggestion-outer-wrapper add-item" v-if="newItem.length > 0 && !inputItem.length">
+     <!-- <h4>Add Item</h4> <br> -->
         <div v-if="newItem.length > 0" >
           <div v-for="(item, index) in newItem" class="add-outer-wrapper" >
           <div class="add-wrapper" >
@@ -115,7 +115,7 @@
           </div>
         </div>
     </div>
-    </transition>
+
 
     <!-- Lists -->
     <div class="tabs">
@@ -127,6 +127,7 @@
       <div class="sl-inner-wrapper">
         <div class="sl">
           <ul>
+           <!--  <li v-if="item.isUrgent" v-for="(item, index) in shopList.slice().reverse()"> -->
             <li v-if="item.isUrgent" v-for="(item, index) in shopList.slice().reverse()">
               <!-- {{ item.product }} ( {{ item.quantity }} )  -->
                <span class="item" v-if="!item.edit">
@@ -166,6 +167,8 @@
           <button @click="sortA()">A - Z</button>
           <button @click="sortLowest()">Sort Lowest</button>
           <button @click="sortHighest()">Sort Highest</button>
+
+          .slice().reverse()
           -->
           <ul>
             <li v-for="(item, index) in shopList.slice().reverse()">

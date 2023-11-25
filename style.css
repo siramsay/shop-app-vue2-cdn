@@ -75,7 +75,7 @@ main {
   color: #111111;
   letter-spacing: 0.04em;
   /*text-align: center;*/
-  width: 375px;
+  /*width: 375px; remove for safari */
   height: 100vh;
   max-height: 812px;
   margin: 0 auto;
@@ -128,7 +128,7 @@ textarea {
   /*width: calc(100% - 30px);
   width: 330px;*/
   width: 100%;
-  margin: 0 0 15px 0;
+  margin: 15px 0 0 0;
   padding: 10px 10px 8px;
   outline: 0;
   font-size: 1em;
@@ -171,6 +171,7 @@ input::placeholder {
   vertical-align: middle;
   line-height: 2.2rem;
 }
+input:-webkit-input-placeholder, /*  Safari */
 input::-webkit-input-placeholder {
   vertical-align: middle;
   position: absolute;
@@ -281,17 +282,27 @@ nav menu li svg {
 .add-item {
   padding: 10px 0;
   background-color: #ffffff;
-  margin-block-end: 20px;
+  margin-block-start: 5px;
+  margin-block-end: 15px;
   margin-inline-start: 10px;
   height: 145px;
   border-radius: 1.5rem 0 0 1.5rem;
   width: calc(100vw - 10px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
-
+#app .add-item  {
+  max-width: 557px;
+}
 
 .suggestion-outer-wrapper > * {
   padding-left: 10px;
   padding-right: 10px;
+  width: 100%;
+}
+.suggestion-outer-wrapper > h4 {
+  padding: 10px;
 }
 .suggestion-wrapper {
   overflow-x: scroll;
@@ -356,7 +367,7 @@ nav menu li svg {
   border: 1px solid transparent;
   border-radius: 50%;
   background-image: radial-gradient(white 50%,transparent 50%);
-  height: 45px;
+  /*height: 45px; fix funny Safari crop */
 }
 .wrapper-button button svg {
   height: 45px;
@@ -393,6 +404,7 @@ li#prev,
   border: 0 solid;
   padding: 0;
   height: 32px;
+  margin-top: 0;
   margin-bottom: 0;
   text-align: center;
 }
@@ -424,6 +436,7 @@ li#prev,
   align-items: center;
   justify-content: flex-end;
   padding-right: 20px;
+  height: 45px;
 }
 .sl .item .product-title {
   flex-basis: 100%;

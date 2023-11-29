@@ -117,11 +117,13 @@ li {
   padding: 10px 0;
   border-bottom: 1px solid #ccc;
 }
+/*
 li span {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+ */
 input,
 textarea {
   font-family: serif;
@@ -363,6 +365,7 @@ nav menu li svg {
   width: 150px;
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 .wrapper-button button {
   appearance: none;
@@ -464,9 +467,11 @@ li#prev,
 .sl button.button-round {
   margin-right: 0;
 }
+/*
 .sl .item span {
   justify-self: flex-start;
 }
+ */
 
 /* Transitions */
 .fade-enter-active, .fade-leave-active {

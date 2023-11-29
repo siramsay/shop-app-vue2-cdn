@@ -360,6 +360,9 @@ nav menu li svg {
 }
 .wrapper-button {
   margin: 0 0 0 auto;
+  width: 150px;
+  display: flex;
+  justify-content: space-around;
 }
 .wrapper-button button {
   appearance: none;
@@ -369,9 +372,16 @@ nav menu li svg {
   background-image: radial-gradient(white 50%,transparent 50%);
   /*height: 45px; fix funny Safari crop */
 }
+.wrapper-button button[disabled] {
+  background-image: radial-gradient(transparent 50%,transparent 50%);
+}
 .wrapper-button button svg {
   height: 45px;
   fill:  #747474;
+}
+.wrapper-button button[disabled] svg {
+  height: 45px;
+  fill: rgba(116, 116, 116, 0.1);
 }
 .add-wrapper button.button-round,
 span button.button-round,
@@ -438,7 +448,7 @@ li#prev,
   padding-right: 20px;
   height: 45px;
 }
-.sl .item .product-title {
+/*.sl .item .product-title {
   flex-basis: 100%;
 }
 .sl .item .product-title + span {
@@ -446,8 +456,8 @@ li#prev,
   padding-left: 10px;
 }
 .sl input {
-  /*text-align: center;*/
-}
+  /text-align: center;*/
+}*/
 .sl .wrapper-button button svg {
   height: 38px;
 }

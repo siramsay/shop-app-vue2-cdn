@@ -367,6 +367,9 @@ nav menu li svg {
   justify-content: space-around;
   align-items: center;
 }
+.add-wrapper .wrapper-button {
+  justify-content: flex-end;
+}
 .wrapper-button button {
   appearance: none;
   background-color: transparent;
@@ -393,7 +396,7 @@ span button.button-round,
   border: 0 solid;
   background-color: #dce3e6;
   border-radius: 1.5em;
-  margin: .2rem 1rem .2rem 0;
+  margin: .2rem .5rem .2rem 1rem;
   /*flex-basis: fit-content;*/
   box-shadow: 2px 2px hsla(0, 0%, 11%, 25%);
   width: 75px;

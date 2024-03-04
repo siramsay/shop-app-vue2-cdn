@@ -1,5 +1,5 @@
 # Shopping List App
-shop-app-vue2-cdn
+shop-app-vue2-cdn (https://github.com/siramsay/shop-app-vue2-cdn)
 
 Built using Vue 2 from a CDN. 
 

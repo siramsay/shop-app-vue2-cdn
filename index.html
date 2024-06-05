@@ -136,7 +136,8 @@
                  <span class="wrapper-button">
                    <span>{{ item.quantity }}</span>
                  </span>
-                <button v-on:click="$set(item, 'edit', !item.edit)" class="button-round">Edit</button>
+                <button v-on:click="itemLog(item)" class="button-round">Edit</button>
+                 <!-- $set(item, 'edit', !item.edit),-->
               </span>
 
               <div class="item" v-if="item.edit">

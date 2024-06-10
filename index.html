@@ -179,11 +179,12 @@
             <li v-for="(item, index) in shopList.slice().reverse()">
 
                <span class="item" v-if="!item.edit">
-                 <span class="product-title">{{ item.product }}</span>
-                 <span class="wrapper-button">
-                   <span>{{ item.quantity }}</span>
-                 </span>
-                <button v-on:click="$set(item, 'edit', !item.edit)" class="button-round">Edit</button>
+                <span class="product-title">{{ item.product }}</span>
+                <span class="wrapper-button">
+                  <span>{{ item.quantity }}</span>
+                </span>
+                <button v-on:click="item.edit = !item.edit" class="button-round">Edit</button>
+                <!--<button v-on:click="$set(item, 'edit', !item.edit)" class="button-round">Edit</button>-->
               </span>
 
               <div class="item" v-if="item.edit">

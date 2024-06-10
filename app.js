@@ -11,7 +11,6 @@ new Vue({
       selectNums: [],
       shopListArray: [],
       shopList: [
-        {index: 'Fish', product: 'Fish', quantity: 20, edit: false},
         {index: 'Burgers', product: 'Burgers', quantity: 4},
         {index: 'Potatoes', product: 'Potatoes', quantity: 10, isUrgent: true},
         {index: 'Apples', product: 'Apples', quantity: 12},
@@ -19,7 +18,8 @@ new Vue({
         {index: 'Coke', product: 'Coke', quantity: 2},
         {index: 'Nacho', product: 'Nacho', quantity: 1, isUrgent: true},
         {index: 'Almond  Milk', product: 'Almond Milk', quantity: 1},
-        {index: 'Cookies', product: 'Cookies', quantity: 1}
+        {index: 'Cookies', product: 'Cookies', quantity: 1},
+        {index: 'Fish', product: 'Fish', quantity: 20, edit: false}
       ],
       //selected: undefined,
       placeHolder: '',

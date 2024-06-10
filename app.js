@@ -11,7 +11,7 @@ new Vue({
       selectNums: [],
       shopListArray: [],
       shopList: [
-        {index: 'Fish', product: 'Fish', quantity: 20},
+        {index: 'Fish', product: 'Fish', quantity: 20, edit: false},
         {index: 'Burgers', product: 'Burgers', quantity: 4},
         {index: 'Potatoes', product: 'Potatoes', quantity: 10, isUrgent: true},
         {index: 'Apples', product: 'Apples', quantity: 12},
@@ -31,6 +31,10 @@ new Vue({
     }
   },
   methods: {
+    itemLog(item) {
+      console.log(item.isUrgent)
+      this.$set(item, 'edit', !item.edit)
+    },
     focusInput() {
       document.querySelector("input").focus();
     },

@@ -4,7 +4,7 @@ shop-app-vue2-cdn (https://github.com/siramsay/shop-app-vue2-cdn)
 Built using Vue 2 from a CDN. 
 
 ## Continued Development Note
-This project is no move to Vue 3 and TypeScript. Please check https://github.com/siramsay/shop-app-vue3
+This project is now moved to Vue 3 and TypeScript. Please check https://github.com/siramsay/shop-app-vue3
 
 ## Prototype for UI/UX Project
 
